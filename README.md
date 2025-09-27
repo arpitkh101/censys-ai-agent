@@ -63,11 +63,15 @@ The Censys AI Agent is a full-stack application that leverages advanced language
 
 ## 📋 Prerequisites
 
+### Recommended: Docker Setup
+- Docker and Docker Compose
+- OpenAI API key or Anthropic API key (optional, falls back to rule-based analysis)
+
+### Alternative: Manual Installation
 - Python 3.8+
 - Node.js 16+
 - npm or yarn
 - OpenAI API key or Anthropic API key (optional, falls back to rule-based analysis)
-- Docker and Docker Compose (for containerized deployment)
 
 ## 🚀 Quick Start
 
@@ -77,8 +81,28 @@ git clone <repository-url>
 cd data_summ_agent
 ```
 
-### 2. Backend Setup
+### 2. Docker Setup (Recommended)
 
+#### Quick Start with Docker
+```bash
+# Set up environment variables
+cp backend/env.example backend/.env
+# Edit backend/.env with your API keys
+
+# Start the application
+docker-compose up --build
+```
+
+**That's it!** The application will be available at:
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:8000
+- API Documentation: http://localhost:8000/docs
+
+### 3. Alternative: Manual Installation
+
+If you prefer to run without Docker, follow these steps:
+
+#### Backend Setup
 ```bash
 cd backend
 
@@ -87,19 +111,14 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
-# For development (includes testing, linting, formatting tools):
 pip install -r requirements.txt
-
-# For production/Docker (minimal dependencies):
-# pip install -r requirements-simple.txt
 
 # Set up environment variables
 cp env.example .env
 # Edit .env with your API keys
 ```
 
-### 3. Frontend Setup
-
+#### Frontend Setup
 ```bash
 cd frontend
 
@@ -107,15 +126,7 @@ cd frontend
 npm install
 ```
 
-### 4. Start the Application
-
-#### Option A: Docker Compose (Recommended)
-```bash
-# From project root
-docker-compose up --build
-```
-
-#### Option B: Manual Start
+#### Manual Start
 ```bash
 # Terminal 1 - Backend
 cd backend
