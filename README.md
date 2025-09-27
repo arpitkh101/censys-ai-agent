@@ -325,8 +325,6 @@ npm test
 
 ## 🤖 AI Techniques Implementation
 
-# 🤖 AI Techniques Implementation
-
 ### Prompt Engineering
 - **Context-Aware Prompts**: Specialized prompts for cybersecurity threat hunting and analysis
 - **Structured Output**: JSON-formatted responses for consistent parsing and integration
