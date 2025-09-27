@@ -1,0 +1,297 @@
+{
+    "metadata": {
+      "description": "Censys host data for interview dataset (original + synthetic hosts)",
+      "created_at": "2025-09-26",
+      "data_sources": ["censys_hosts", "synthetic_generation"],
+      "hosts_count": 8,
+      "ips_analyzed": [
+        "168.196.241.227",
+        "1.92.135.168",
+        "1.94.62.205",
+        "104.16.123.45",
+        "203.0.113.12",
+        "185.199.108.33",
+        "45.77.22.11",
+        "103.21.58.9",
+        "92.53.123.200"
+      ]
+    },
+    "hosts": [
+      {
+        "ip": "203.0.113.12",
+        "location": {
+          "city": "Sydney",
+          "country": "Australia",
+          "country_code": "AU",
+          "coordinates": { "latitude": -33.8688, "longitude": 151.2093 }
+        },
+        "autonomous_system": {
+          "asn": 1221,
+          "name": "Telstra Corporation Ltd",
+          "country_code": "AU"
+        },
+        "dns": { "hostname": "svc203-0-113-12.example.au" },
+        "operating_system": { "vendor": "microsoft", "product": "windows", "version": "2019" },
+        "services": [
+          {
+            "port": 3389,
+            "protocol": "RDP",
+            "banner": "RDP-Server 10.0",
+            "authentication_required": true,
+            "software": [
+              { "product": "rdp", "vendor": "microsoft", "version": "10.0" }
+            ],
+            "vulnerabilities": [
+              {
+                "cve_id": "CVE-2022-21999",
+                "severity": "high",
+                "cvss_score": 8.0,
+                "description": "Remote code execution in RDP service (observed exposed to internet)"
+              }
+            ]
+          },
+          {
+            "port": 443,
+            "protocol": "HTTPS",
+            "banner": "HTTP/1.1 200 OK",
+            "tls_enabled": true,
+            "certificate": {
+              "fingerprint_sha256": "d41d8cd98f00b204e9800998ecf8427eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "subject": "CN=svc.example.au",
+              "issuer": "CN=Let's Encrypt",
+              "self_signed": false,
+              "valid_from": "2025-03-01T00:00:00Z",
+              "valid_to": "2025-06-29T23:59:59Z",
+              "subject_alt_names": ["svc.example.au", "www.svc.example.au"]
+            },
+            "software": [
+              { "product": "iis", "vendor": "microsoft", "version": "10.0" }
+            ],
+            "response_details": { "status_code": 200, "title": "svc - dashboard" },
+            "security_headers": {
+              "strict_transport_security": "max-age=31536000; includeSubDomains",
+              "x_content_type_options": "nosniff"
+            }
+          }
+        ],
+        "threat_intelligence": {
+          "security_labels": ["REMOTE_DESKTOP"],
+          "risk_level": "high"
+        }
+      },
+      {
+        "ip": "185.199.108.33",
+        "location": {
+          "city": "Berlin",
+          "country": "Germany",
+          "country_code": "DE",
+          "coordinates": { "latitude": 52.52, "longitude": 13.405 }
+        },
+        "autonomous_system": {
+          "asn": 396982,
+          "name": "ExampleHost GmbH",
+          "country_code": "DE"
+        },
+        "dns": { "hostname": "api-185-199-108-33.example.de" },
+        "operating_system": { "vendor": "canonical", "product": "ubuntu", "version": "20.04" },
+        "services": [
+          {
+            "port": 9200,
+            "protocol": "HTTP",
+            "banner": "HTTP/1.1 200 OK",
+            "software": [
+              { "product": "elasticsearch", "vendor": "elastic", "version": "6.8.0" }
+            ],
+            "vulnerabilities": [
+              {
+                "cve_id": "CVE-2015-1427",
+                "severity": "critical",
+                "cvss_score": 9.0,
+                "description": "Unauthenticated remote code execution (open elasticsearch port with default settings)"
+              }
+            ],
+            "authentication_required": false,
+            "response_details": { "status_code": 200, "title": "Elasticsearch cluster" }
+          },
+          {
+            "port": 22,
+            "protocol": "SSH",
+            "banner": "SSH-2.0-OpenSSH_7.6p1",
+            "software": [
+              { "product": "openssh", "vendor": "openbsd", "version": "7.6p1" }
+            ],
+            "vulnerabilities": []
+          }
+        ],
+        "threat_intelligence": {
+          "security_labels": ["DATABASE_EXPOSED"],
+          "risk_level": "critical",
+          "notes": "Elasticsearch instance returned cluster health without auth — high exposure risk."
+        }
+      },
+      {
+        "ip": "45.77.22.11",
+        "location": {
+          "city": "São Paulo",
+          "country": "Brazil",
+          "country_code": "BR",
+          "coordinates": { "latitude": -23.55, "longitude": -46.6333 }
+        },
+        "autonomous_system": {
+          "asn": 14061,
+          "name": "DigitalOcean, LLC",
+          "country_code": "US"
+        },
+        "dns": { "hostname": "srv45-77-22-11.example.br" },
+        "operating_system": { "vendor": "debian", "product": "linux", "version": "10" },
+        "services": [
+          {
+            "port": 6379,
+            "protocol": "Redis",
+            "banner": "Redis server v=5.0.7",
+            "authentication_required": false,
+            "software": [
+              { "product": "redis", "vendor": "redis", "version": "5.0.7" }
+            ],
+            "vulnerabilities": [
+              {
+                "cve_id": null,
+                "severity": "high",
+                "cvss_score": 8.6,
+                "description": "Redis configured without requirepass — allows data access and lateral movement"
+              }
+            ]
+          },
+          {
+            "port": 80,
+            "protocol": "HTTP",
+            "banner": "HTTP/1.1 200 OK",
+            "software": [
+              { "product": "apache", "vendor": "apache", "version": "2.4.25" }
+            ],
+            "response_details": { "status_code": 200, "title": "Welcome" }
+          }
+        ],
+        "threat_intelligence": {
+          "security_labels": ["INSECURE_DEFAULTS"],
+          "risk_level": "high",
+          "malware_observed": []
+        }
+      },
+      {
+        "ip": "103.21.58.9",
+        "location": {
+          "city": "Mumbai",
+          "country": "India",
+          "country_code": "IN",
+          "coordinates": { "latitude": 19.076, "longitude": 72.8777 }
+        },
+        "autonomous_system": {
+          "asn": 24560,
+          "name": "Mumbai Hosting Pvt Ltd",
+          "country_code": "IN"
+        },
+        "dns": { "hostname": "host103-21-58-9.example.in" },
+        "operating_system": { "vendor": "canonical", "product": "ubuntu", "version": "18.04" },
+        "services": [
+          {
+            "port": 21,
+            "protocol": "FTP",
+            "banner": "220 (vsFTPd 3.0.3)",
+            "tls_enabled": false,
+            "software": [
+              { "product": "vsftpd", "vendor": "vsftpd", "version": "3.0.3" }
+            ],
+            "vulnerabilities": [
+              {
+                "cve_id": "CVE-2011-4137",
+                "severity": "medium",
+                "cvss_score": 6.2,
+                "description": "Anonymous FTP write enabled (uploads possible)"
+              }
+            ],
+            "access_restricted": false
+          },
+          {
+            "port": 22,
+            "protocol": "SSH",
+            "banner": "SSH-2.0-OpenSSH_8.2p1",
+            "software": [
+              { "product": "openssh", "vendor": "openbsd", "version": "8.2p1" }
+            ]
+          },
+          {
+            "port": 8080,
+            "protocol": "HTTP",
+            "banner": "HTTP/1.1 403 Forbidden",
+            "response_details": { "status_code": 403, "title": "Forbidden" }
+          }
+        ],
+        "threat_intelligence": {
+          "security_labels": ["FILE_TRANSFER"],
+          "risk_level": "medium",
+          "notes": "Anonymous FTP with write creates risk of malicious payload distribution."
+        }
+      },
+      {
+        "ip": "92.53.123.200",
+        "location": {
+          "city": "Moscow",
+          "country": "Russian Federation",
+          "country_code": "RU",
+          "coordinates": { "latitude": 55.7558, "longitude": 37.6173 }
+        },
+        "autonomous_system": {
+          "asn": 24940,
+          "name": "Rostelecom",
+          "country_code": "RU"
+        },
+        "dns": { "hostname": "web92-53-123-200.example.ru" },
+        "operating_system": { "vendor": "centos", "product": "linux", "version": "7" },
+        "services": [
+          {
+            "port": 445,
+            "protocol": "SMB",
+            "banner": "Windows 7-10 Microsoft SMB",
+            "software": [
+              { "product": "samba", "vendor": "samba", "version": "3.6.23" }
+            ],
+            "vulnerabilities": [
+              {
+                "cve_id": "CVE-2017-0144",
+                "severity": "critical",
+                "cvss_score": 9.8,
+                "description": "EternalBlue-like SMB RCE (host answered to SMB probes)"
+              }
+            ],
+            "access_restricted": false
+          },
+          {
+            "port": 8443,
+            "protocol": "HTTPS",
+            "banner": "HTTP/1.1 200 OK",
+            "tls_enabled": true,
+            "certificate": {
+              "fingerprint_sha256": "b6e1c5a7b2c4d6e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2",
+              "subject": "CN=panel.example.ru",
+              "issuer": "CN=Example CA",
+              "self_signed": false,
+              "valid_from": "2024-11-01T00:00:00Z",
+              "valid_to": "2026-11-01T23:59:59Z",
+              "subject_alt_names": ["panel.example.ru"]
+            },
+            "software": [
+              { "product": "tomcat", "vendor": "apache", "version": "8.5.23" }
+            ],
+            "response_details": { "status_code": 200, "title": "Admin Panel" }
+          }
+        ],
+        "threat_intelligence": {
+          "security_labels": ["SMB_EXPOSED", "POTENTIAL_RCE"],
+          "risk_level": "critical",
+          "malware_families": []
+        }
+      }
+    ]
+  }
+  
