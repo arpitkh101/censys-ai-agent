@@ -1,3 +1,7 @@
+# PRODUCTION REQUIREMENTS
+# This file is used for Docker/production deployment
+# For development with testing tools, use requirements.txt instead
+#
 # Core FastAPI dependencies
 fastapi>=0.104.0
 uvicorn[standard]>=0.24.0

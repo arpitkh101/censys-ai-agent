@@ -87,7 +87,11 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 # Install dependencies
+# For development (includes testing, linting, formatting tools):
 pip install -r requirements.txt
+
+# For production/Docker (minimal dependencies):
+# pip install -r requirements-simple.txt
 
 # Set up environment variables
 cp env.example .env
@@ -324,8 +328,6 @@ npm test
 ```
 
 ## 🤖 AI Techniques Implementation
-
-# 🤖 AI Techniques Implementation
 
 ### Prompt Engineering
 - **Context-Aware Prompts**: Specialized prompts for cybersecurity threat hunting and analysis
