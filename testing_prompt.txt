@@ -1,0 +1,13 @@
+I am testing an automated cybersecurity summarization agent. I have Censys host data in JSON format that includes multiple hosts with fields such as IP address, location, autonomous system, services, TLS certificates, vulnerabilities, and risk labels.
+
+Please generate similar JSON data for 5 additional hosts, following the same structure and field naming as my dataset.
+
+The generated hosts should:
+
+Vary in geography, service types (HTTP, RDP, FTP, Redis, SMB, etc.), and risk levels (low, medium, high, critical).
+
+Include a mix of clean hosts and hosts with realistic malware, misconfigurations or vulnerabilities (e.g., open databases, outdated software, weak TLS, exposed admin panels).
+
+Contain plausible but synthetic values (no real IPs or actual vulnerabilities).
+
+Output only the JSON. And summarize the risky ones for validation
