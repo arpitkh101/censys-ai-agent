@@ -98,7 +98,7 @@ docker-compose up --build
 - Backend API: http://localhost:8000
 - API Documentation: http://localhost:8000/docs
 
-### 3. Alternative: Manual Installation (I'd prefer Docker)
+### 3. Alternative: Manual Installation
 
 If you prefer to run without Docker, follow these steps:
 
