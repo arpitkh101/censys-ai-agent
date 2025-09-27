@@ -339,60 +339,38 @@ Health check endpoint
    - Verify fallback to rule-based analysis
    - Test different AI models (OpenAI, Anthropic, Gemini)
 
-### Automated Testing
-
-```bash
-# Backend tests
-cd backend
-pytest tests/
-
-# Frontend tests
-cd frontend
-npm test
-```
-
 ## 🤖 AI Techniques Implementation
 
 ### Prompt Engineering
 - **Context-Aware Prompts**: Specialized prompts for cybersecurity threat hunting and analysis
 - **Structured Output**: JSON-formatted responses for consistent parsing and integration
 - **Risk Prioritization**: Prompts designed to identify and escalate critical security issues
-- **Multi-Perspective Analysis**: Single prompt generating executive, technical, and infrastructure summaries
 
 ### Model Integration
 - **Multi-Model Support**: OpenAI GPT-4, Anthropic Claude, Google Gemini with intelligent failover
+- **Output Validation**: AI response quality checks with fallback to alternative models
 - **Fallback Mechanisms**: Rule-based analysis engine when AI services are unavailable
-- **Connection Pooling**: HTTP/2 optimized API calls with connection reuse for performance
-- **Error Handling**: Graceful degradation, exponential backoff, and comprehensive retry logic
 
 ### Analysis Techniques
 - **Vulnerability Correlation**: CVE data integration with CVSS scoring and KEV catalog matching
 - **Threat Intelligence**: Malware signature detection and threat actor infrastructure attribution
 - **Geographic Analysis**: ASN vs GeoIP correlation for hosting anomaly detection
-- **Service Pattern Recognition**: ML-enhanced identification of suspicious service combinations and toolkit signatures
 - **Confidence Scoring**: AI output quality assessment with reliability metrics
-
-### Advanced AI Features
-- **Dynamic Prompt Generation**: Context-sensitive prompt modification based on host data complexity
-- **Output Validation**: AI response quality checks with fallback to alternative models
-- **Semantic Analysis**: Natural language processing for banner and certificate analysis
-- **Pattern Learning**: Continuous improvement through analysis result correlation
 
 ## 🚀 Future Enhancements
 
-### Short-term Improvements (Next Release)
+### Short-term Improvements
 - **Direct Censys API Integration**: Fetch live data instead of manual uploads
-- **Bulk Analysis**: Process multiple hosts simultaneously with progress tracking  
 - **Export Options**: PDF reports and CSV summaries for stakeholder sharing
 - **Advanced Filtering**: Filter results by risk level, location, or service type
 
-### Medium-term Features (3-6 months)
+### Medium-term Features 
 - **Historical Tracking**: Store and compare analysis results over time
 - **Custom Templates**: User-defined report formats and analysis focus areas
 - **SIEM Integration**: Direct export to Splunk, QRadar, and other security platforms
 - **Automated Alerting**: Email/Slack notifications for critical findings
 
-### Advanced Capabilities (6+ months)
+### Advanced Capabilities
 - **Cross-host Analysis**: Identify patterns and correlations across multiple hosts
 - **Threat Intelligence Feeds**: Integration with commercial threat intel sources
 - **Natural Language Queries**: Ask questions like "Show me all critical hosts in US"
@@ -402,7 +380,6 @@ npm test
 - **Response Caching**: Faster results for previously analyzed hosts
 - **Database Backend**: Persistent storage for analysis history
 - **Performance Tuning**: Optimized processing for large datasets
-- **Enhanced Error Handling**: Better recovery from API failures and data issues
 
 ## 🛡️ Security Considerations
 
