@@ -69,8 +69,8 @@ The Censys AI Agent is a full-stack application that leverages advanced language
 
 ### Alternative: Manual Installation
 - Python 3.8+
-- Node.js 16+
-- npm or yarn
+- Node.js 18+ (recommended: 18.x LTS)
+- npm 8+ or yarn
 - OpenAI or Anthropic or Gemini API key (optional, falls back to rule-based analysis)
 
 ## 🚀 Quick Start
@@ -98,7 +98,7 @@ docker-compose up --build
 - Backend API: http://localhost:8000
 - API Documentation: http://localhost:8000/docs
 
-### 3. Alternative: Manual Installation
+### 3. Alternative: Manual Installation (I'd prefer Docker)
 
 If you prefer to run without Docker, follow these steps:
 
@@ -106,11 +106,19 @@ If you prefer to run without Docker, follow these steps:
 ```bash
 cd backend
 
+# Install system dependencies
+# On Ubuntu/Debian:
+sudo apt-get update && sudo apt-get install -y build-essential libssl-dev libffi-dev curl
+# On macOS with Homebrew:
+# brew install openssl libffi curl
+# On Windows: Install Visual Studio Build Tools or use conda/miniconda
+
 # Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate.bat
 
-# Install dependencies
+# Upgrade pip and install dependencies
+pip install --upgrade pip
 pip install -r requirements.txt
 
 # Set up environment variables
@@ -122,6 +130,9 @@ cp env.example .env
 ```bash
 cd frontend
 
+# Verify Node.js version (should be 18+)
+node --version
+
 # Install dependencies
 npm install
 ```
@@ -130,7 +141,7 @@ npm install
 ```bash
 # Terminal 1 - Backend
 cd backend
-python main.py
+python run.py
 
 # Terminal 2 - Frontend
 cd frontend
