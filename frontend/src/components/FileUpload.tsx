@@ -172,9 +172,6 @@ const FileUpload: React.FC<FileUploadProps> = ({
                 ? 'Drop the JSON file here'
                 : 'Drag & drop a JSON file here, or click to select'}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Supports Censys host data in JSON format
-            </Typography>
           </UploadArea>
 
           {uploadedFile && (

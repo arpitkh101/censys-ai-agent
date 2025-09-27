@@ -65,13 +65,13 @@ The Censys AI Agent is a full-stack application that leverages advanced language
 
 ### Recommended: Docker Setup
 - Docker and Docker Compose
-- OpenAI API key or Anthropic API key (optional, falls back to rule-based analysis)
+- OpenAI or Anthropic or Gemini API key (optional, falls back to rule-based analysis)
 
 ### Alternative: Manual Installation
 - Python 3.8+
 - Node.js 16+
 - npm or yarn
-- OpenAI API key or Anthropic API key (optional, falls back to rule-based analysis)
+- OpenAI or Anthropic or Gemini API key (optional, falls back to rule-based analysis)
 
 ## 🚀 Quick Start
 
@@ -149,10 +149,10 @@ The application will be available at:
 Create a `.env` file in the backend directory:
 
 ```env
-# AI Model API Keys (optional)
+# AI Model API Keys (only one needed - choose your preferred provider)
 OPENAI_API_KEY=your_openai_api_key_here
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
-GEMINI_API_KEY=your_gemini_api_key_here
+# ANTHROPIC_API_KEY=your_anthropic_api_key_here
+# GEMINI_API_KEY=your_gemini_api_key_here
 
 # Server Configuration
 HOST=0.0.0.0
@@ -165,11 +165,13 @@ ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
 
 ### API Keys Setup
 
-1. **OpenAI**: Get your API key from [OpenAI Platform](https://platform.openai.com/api-keys)
+**You only need ONE API key** - choose your preferred AI provider:
+
+1. **OpenAI** (Recommended): Get your API key from [OpenAI Platform](https://platform.openai.com/api-keys)
 2. **Anthropic**: Get your API key from [Anthropic Console](https://console.anthropic.com/)
 3. **Google Gemini**: Get your API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
 
-**Note**: The application works without API keys using rule-based analysis, but AI-powered summaries provide much richer insights.
+**Note**: The application works without API keys using rule-based analysis, but AI-powered summaries provide much richer insights. If you provide multiple API keys, the system will use them as fallbacks if the primary one fails.
 
 ## 📖 Usage
 
